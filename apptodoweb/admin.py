@@ -1,3 +1,4 @@
 from django.contrib import admin
+from .models import Model_ToDoWeb
 
-# Register your models here.
+admin.site.register(Model_ToDoWeb)

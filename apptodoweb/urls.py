@@ -4,5 +4,7 @@ from . import views
 App_name = "apptodoweb"
 
 urlpatterns = [
-    path("", views.MainView.as_view(), name="index"),
+    #path("", views.MainView.as_view(), name="index"),
+    #path("view_addToDo/", views.view_addToDo, name="view_addToDo"),
+    path("", views.index, name="index")
 ]
