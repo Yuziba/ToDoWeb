@@ -23,6 +23,7 @@ def index(request):
         "list": item_list,
         "title": "TODO LIST",
     }
+    print(page)
     return render(request, 'apptodoweb/index.html', page)
 
 
