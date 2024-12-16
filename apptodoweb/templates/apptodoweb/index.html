@@ -38,19 +38,32 @@
 </head>
 
 <body  class="container-fluid">
+  <h1 style="text-align: center;"><i>__TODO LIST__</i></h1>
     <script src="{% static 'myapp/js/bootstrap.bundle.min.js' %}"></script>
     {% if messages %}
-    {% for message in messages %}
-    <div class="alert alert-info">
-      <strong>{{message}}</strong>
-    </div>
-    {% endfor %}
+      {% for message in messages %}
+        <div class="alert alert-info">
+          <strong>{{message}}</strong>
+        </div>
+      {% endfor %}
     {% endif %}
 
-<h1><i>__TODO LIST__</i></h1>
+
 
 
   <div class="row">
+    <div class="col-md-3" >
+      <div  class="submit_form">
+        <form  method="POST">
+          {% csrf_token %}
+          {{forms}}
+          <center> <input type="submit" class="btn btn-default" value="submit" /> </center>
+        </form>
+      </div>
+    </div>
+
+
+
     <div class="col-md-8">
       {% for i in list %}
       <div class="card">
@@ -65,15 +78,7 @@
       {% endfor%}
     </div>
 
-    <div class="col-md-3" >
-      <div  class="submit_form">
-        <form  method="POST">
-          {% csrf_token %}
-          {{forms}}
-          <center> <input type="submit" class="btn btn-default" value="submit" /> </center>
-        </form>
-      </div>
-    </div>
+            
   </div>
 </body>
 
